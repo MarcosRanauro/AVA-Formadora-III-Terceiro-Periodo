@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Buscar Cep
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="container">
+  <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh; overflow-y: auto;">
+    <div class="d-flex flex-column align-items-center">
+      <ion-item class="pesquisa">
+        <ion-label position="floating">CEP</ion-label>
+        <ion-input type="text" [(ngModel)]="cep"></ion-input>
+      </ion-item>
+      <ion-button (click)="buscarCep(cep)">Buscar</ion-button>
+    </div>
+
+    <!--Mostrando os dados do CEP-->
+    <div class="card" style="width: 20rem;">
+      <ion-card *ngIf="dataReturn" class="card-container">
+        <ion-card-header class="card-header">
+          <ion-card-title>CEP: {{dataReturn.cep}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content">
+          <p>Logradouro: {{dataReturn.logradouro}}</p>
+          <p>Complemento: {{dataReturn.complemento}}</p>
+          <p>Bairro: {{dataReturn.bairro}}</p>
+          <p>Cidade: {{dataReturn.localidade}}</p>
+          <p>Estado: {{dataReturn.uf}}</p>
+          <p>DDD: {{dataReturn.ddd}}</p>
+        </ion-card-content>
+        <ion-button (click)="limpar()">Limpar</ion-button>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

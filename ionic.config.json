@@ -1,0 +1,7 @@
+{
+  "name": "AVA-Formadora-III-Terceiro-Periodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
